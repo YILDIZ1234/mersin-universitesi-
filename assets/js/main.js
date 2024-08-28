@@ -38,11 +38,26 @@
 	});
 
 	////////////////////////////////////////////////////
-    // 02. Mobile Menu Js
+   // 02. Mobile Menu Js
 	$('#mobile-menu').meanmenu({
 		meanMenuContainer: '.mobile-menu',
 		meanScreenWidth: "1199",
 		meanExpand: ['<i class="fal fa-plus"></i>'],
+	});
+
+	////////////////////////////////////////////////////
+	// Mobile menüde diğer ana başlıklar expand edildiğinde, açık olanları kapatması sağlandı.
+	$('.mean-expand').on('click', function (e) {
+		e.preventDefault();
+		$('li.has-dropdown').removeClass('dropdown-opened');
+		$('li.has-dropdown>ul').hide();
+		$('li.has-dropdown>a.mean-expand').removeClass('mean-clicked');
+		if (jQuery(this).hasClass("mean-clicked")) {
+			jQuery(this).prev('ul').slideUp(200, function () { });
+		} else {
+			jQuery(this).prev('ul').slideDown(200, function () { });
+		}
+		jQuery(this).toggleClass("mean-clicked");
 	});
 
 
