@@ -349,5 +349,138 @@
 	$('.hover__active').on('mouseenter', function () {
 		$(this).addClass('active').parent().siblings().find('.hover__active').removeClass('active');
 	});
+		////////////////////////////////////////////////////
+    // 24. idari Personel Profili Js
+
+    document.addEventListener("DOMContentLoaded", function () {
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+});
+
+
+////////////////////////////////////////////////////
+    // 25. Haber Sayfası Js
+document.addEventListener('DOMContentLoaded', function() {
+    var increaseCount = 0;
+    var decreaseCount = 0;
+    var maxResize = 3;
+
+    function resizeText(action) {
+        var paragraphs = document.querySelectorAll('#content p');
+
+        if (action === 'increase' && increaseCount < maxResize) {
+            for (var i = 0; i < paragraphs.length; i++) {
+                var style = window.getComputedStyle(paragraphs[i], null).getPropertyValue('font-size');
+                var currentSize = parseFloat(style);
+                paragraphs[i].style.fontSize = (currentSize + 2) + 'px';
+            }
+            increaseCount++;
+            decreaseCount = Math.max(0, decreaseCount - 1);
+        } else if (action === 'decrease' && decreaseCount < maxResize) {
+            for (var i = 0; i < paragraphs.length; i++) {
+                var style = window.getComputedStyle(paragraphs[i], null).getPropertyValue('font-size');
+                var currentSize = parseFloat(style);
+                paragraphs[i].style.fontSize = (currentSize - 2) + 'px';
+            }
+            decreaseCount++;
+            increaseCount = Math.max(0, increaseCount - 1);
+        } else if (action === 'reset') {
+            for (var i = 0; i < paragraphs.length; i++) {
+                paragraphs[i].style.fontSize = '16px'; // or any default size you prefer
+            }
+            increaseCount = 0;
+            decreaseCount = 0;
+        }
+
+        document.getElementById('increaseBtn').disabled = (increaseCount >= maxResize);
+        document.getElementById('decreaseBtn').disabled = (decreaseCount >= maxResize);
+    }
+
+    document.getElementById('increaseBtn').addEventListener('click', function() {
+        resizeText('increase');
+    });
+    document.getElementById('decreaseBtn').addEventListener('click', function() {
+        resizeText('decrease');
+    });
+    document.getElementById('resetBtn').addEventListener('click', function() {
+        resizeText('reset');
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const galleryItems = document.querySelectorAll('.gallery a');
+    const lightbox = document.querySelector('.lightbox');
+    const img = lightbox.querySelector('img');
+    let currentIndex = 0;
+
+    galleryItems.forEach((item, index) => {
+        item.addEventListener('click', function (event) {
+            event.preventDefault();
+            event.stopPropagation(); // Sayfanın kaymasını engeller
+            img.src = this.href;
+            currentIndex = index;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Sayfanın kaymasını engelle
+        });
+    });
+
+    document.querySelector('.lightbox-arrow.left').addEventListener('click', function (event) {
+        event.stopPropagation();
+        currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+        img.src = galleryItems[currentIndex].href;
+    });
+
+    document.querySelector('.lightbox-arrow.right').addEventListener('click', function (event) {
+        event.stopPropagation();
+        currentIndex = (currentIndex + 1) % galleryItems.length;
+        img.src = galleryItems[currentIndex].href;
+    });
+
+    document.querySelector('.lightbox-close').addEventListener('click', function (event) {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = ''; // Sayfanın kaymasını geri aç
+    });
+
+    lightbox.addEventListener('click', function () {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = ''; // Sayfanın kaymasını geri aç
+    });
+});
+
+////////////////////////////////////////////////////
+    // 26. Arama Js
+
+   document.addEventListener("DOMContentLoaded", function() {
+    function openSearchModal() {
+        console.log("Open button clicked!"); // Kontrol için eklendi
+        document.getElementById("searchModal").style.display = "block";
+    };
+
+    function closeSearchModal() {
+        console.log("Close button clicked!"); // Kontrol için eklendi
+        document.getElementById("searchModal").style.display = "none";
+    };
+
+    window.onclick = function(event) {
+        var modal = document.getElementById("searchModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+
+    // Açılır pencereyi tetikleyen işlevleri global hale getirme
+    window.openSearchModal = openSearchModal;
+    window.closeSearchModal = closeSearchModal;
+});
 
 })(jQuery);
