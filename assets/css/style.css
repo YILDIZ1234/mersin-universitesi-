@@ -10571,31 +10571,31 @@ background-color: #f47920;
 
 
 .personnel {
-    width: 100%; /* Genişlik yüzde olarak ayarlandı */
-    max-width: 800px; /* Maksimum genişlik ayarlandı */
-    margin: 40px auto; /* Kenar boşlukları artırıldı */
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
     border: 1px solid #ccc;
     padding: 20px;
     border-radius: 8px;
-    box-sizing: border-box; /* Padding dahil */
+    box-sizing: border-box;
 }
 
 .header {
     display: flex;
     align-items: center;
-    flex-wrap: wrap; /* Küçük ekranlarda satır kayması için */
+    flex-wrap: wrap;
 }
 
 .profile-pic {
     width: 100px;
     border-radius: 50%;
     margin-right: 20px;
-    margin-bottom: 20px; /* Küçük ekranlar için alt boşluk */
-    flex-shrink: 0; /* Resmin küçülmesini engellemek için */
+    margin-bottom: 20px;
+    flex-shrink: 0;
 }
 
 .info {
-    flex: 1; /* Bilgi bölümünün kalan alanı kaplaması için */
+    flex: 1;
 }
 
 .info h2 {
@@ -10634,65 +10634,56 @@ background-color: #f47920;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     width: 100%;
-    box-sizing: border-box; /* Padding dahil */
+    box-sizing: border-box;
 }
 
 .education-content {
+    width: 100%;
     border: 1px solid #ddd;
     padding: 10px;
     border-radius: 8px;
     margin-top: 10px;
-    width: 100%; /* Genişliği tam olarak ayarlandı */
-    box-sizing: border-box; /* Padding dahil */
-    max-height: 200px; /* Maksimum yükseklik ayarlandı */
-    overflow-y: auto; /* Dikey kaydırma etkinleştirildi */
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-x: auto; /* Yatay kaydırma etkinleştirildi */
+    white-space: normal; /* Hücre içerikleri satır kaydırma olmadan görüntülenir */
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
+    table-layout: fixed; /* Tablo sütun genişliklerinin sabit olmasını sağlar */
+    min-width: 600px; /* Minimum tablo genişliği ayarlandı, mobilde kaydırma için */
+
+
 }
 
 th, td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 10px;
     text-align: left;
+    word-wrap: break-word; 
 }
 
 th {
     background-color: #f2f2f2;
 }
 
-/* Medya sorguları */
+
+
 @media (max-width: 600px) {
-    .header {
-        flex-direction: column; /* Küçük ekranlar için dikey hizalama */
-        align-items: flex-start; /* İçeriği sola hizalama */
+    .education-content {
+        padding: 5px;
+        overflow-x: auto; /* Mobilde yatay scroll etkin */
     }
 
-    .profile-pic {
-        margin-right: 0;
-    }
-
-    .info h2 {
-        font-size: 24px; /* Başlık boyutunu küçült */
-    }
-
-    .accordion {
-        font-size: 16px; /* Buton yazı boyutunu küçült */
+    table {
+        width: 100%; /* Mobilde genişliği tutmak için */
     }
 
     th, td {
-        font-size: 14px; /* Tablo yazı boyutunu küçült */
-    }
-
-    .panel {
-        padding: 0 10px; /* Panelin iç boşluğunu küçült */
-    }
-
-    .education-content {
-        padding: 5px; /* Eğitim içeriğinin padding'ini küçült */
+        font-size: 14px; /* Mobilde yazı boyutu küçültüldü */
     }
 }
 
