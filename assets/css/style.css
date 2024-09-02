@@ -11272,9 +11272,7 @@ th {
     }
 }
 
-
-/* Güncel-Arşiv Haber CSS */
-/* Tab butonları */
+/* Güncel - Arşiv Haber CSS */
 .tab-menu {
     display: flex;
     align-items: center;
@@ -11288,29 +11286,29 @@ th {
     color: #fff;
     padding: 12px 24px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease;
     margin-right: 10px;
     font-weight: bold;
     border-radius: 5px;
     font-size: 16px;
 }
 
-.tablink.active {
-    background-color: #e67300;
-}
+    .tablink.active {
+        background-color: rgba(230, 115, 0, 0.8); /* Opaklık azaltıldı */
+    }
 
-.tablink:hover {
-    background-color: #e67300;
-}
+    .tablink:hover {
+        background-color: rgba(230, 115, 0, 0.8); /* Opaklık azaltıldı */
+    }
 
 /* Tab içerik stilleri */
 .tab-content-item {
     display: none;
 }
 
-.tab-content-item.active {
-    display: block;
-}
+    .tab-content-item.active {
+        display: block;
+    }
 
 /* Haber kutusu */
 .haber-guncel {
@@ -11328,38 +11326,38 @@ th {
     padding: 15px;
     background-color: #fff;
     border-radius: 10px;
-    border: 2px solid #ff7f00; /* Turuncu çerçeve */
+    border: 2px solid rgba(255, 127, 0, 0.3); /* Opaklık azaltıldı */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
 }
 
-.haber-item:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
+    .haber-item:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
 
-.haber-item img {
-    width: 120px;
-    height: 80px;
-    object-fit: cover;
-    margin-right: 15px;
-    border-radius: 10px;
-}
+    .haber-item img {
+        width: 120px;
+        height: 80px;
+        object-fit: cover;
+        margin-right: 15px;
+        border-radius: 10px;
+    }
 
 .haber-text {
     display: flex;
     flex-direction: column;
 }
 
-.haber-text p {
-    margin: 0;
-    color: #333;
-}
+    .haber-text p {
+        margin: 0;
+        color: #333;
+    }
 
-.haber-text strong {
-    font-size: 16px;
-    display: block;
-    margin-bottom: 8px;
-}
+    .haber-text strong {
+        font-size: 16px;
+        display: block;
+        margin-bottom: 8px;
+    }
 /* Tarih kısmı için stil */
 /* Tarih kısmı için stil */
 
@@ -11367,54 +11365,54 @@ th {
     display: flex;
     align-items: center;
     padding: 10px;
-    border: 2px solid #ff7f00;  /* Turuncu çerçeve */
+    border: 2px solid rgba(255, 127, 0, 0.3); /* Opaklık azaltıldı */
     border-radius: 5px;
     background-color: #f9f9f9;
 }
 
-#date-filter input[type="date"] {
-    padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    flex: 1;
-}
+    #date-filter input[type="date"] {
+        padding: 10px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+        flex: 1;
+    }
 
-#date-filter input[type="date"]::before {
-    content: attr(placeholder);
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #999;
-}
+        #date-filter input[type="date"]::before {
+            content: attr(placeholder);
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
 
-#date-filter input[type="date"]:focus::before,
-#date-filter input[type="date"]:valid::before {
-    display: none;
-}
+        #date-filter input[type="date"]:focus::before,
+        #date-filter input[type="date"]:valid::before {
+            display: none;
+        }
 
-#date-filter label {
-    font-weight: bold;
-    margin-right: 10px;
-    color: #333;
-}
+    #date-filter label {
+        font-weight: bold;
+        margin-right: 10px;
+        color: #333;
+    }
 
-#date-filter button.search-btn {
-    padding: 10px 20px;
-    background-color: #ff7f00;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
+    #date-filter button.search-btn {
+        padding: 10px 20px;
+        background-color: #ff7f00;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
 
-#date-filter button.search-btn:hover {
-    background-color: #e67300;
-}
+        #date-filter button.search-btn:hover {
+            background-color: #e67300;
+        }
 
 
 /* Pop-up Uyarı Mesajı */
@@ -11436,25 +11434,25 @@ th {
     max-width: 90%; /* Küçük ekranlar için genişlik sınırı */
 }
 
-#popup-warning.active {
-    display: block;
-}
+    #popup-warning.active {
+        display: block;
+    }
 
-#popup-warning .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: transparent;
-    border: none;
-    font-size: 24px;
-    font-weight: bold;
-    color: #fff;
-    cursor: pointer;
-}
+    #popup-warning .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: transparent;
+        border: none;
+        font-size: 24px;
+        font-weight: bold;
+        color: #fff;
+        cursor: pointer;
+    }
 
-#popup-warning .close-btn:hover {
-    color: #f5f5f5;
-}
+        #popup-warning .close-btn:hover {
+            color: #f5f5f5;
+        }
 
 /* Arşiv ve Güncel butonlarının boyutlarının sabit kalması için */
 .tablink {
@@ -11467,6 +11465,7 @@ th {
         opacity: 0;
         transform: translateY(-10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -11479,9 +11478,9 @@ th {
         align-items: stretch;
     }
 
-    #date-filter input[type="date"] {
-        max-width: 100%;
-    }
+        #date-filter input[type="date"] {
+            max-width: 100%;
+        }
 }
 
 @media (max-width: 768px) {
@@ -11498,16 +11497,16 @@ th {
         align-items: flex-start;
     }
 
-    #date-filter input[type="date"] {
-        margin-right: 0;
-        margin-bottom: 10px;
-        width: 100%;
-    }
+        #date-filter input[type="date"] {
+            margin-right: 0;
+            margin-bottom: 10px;
+            width: 100%;
+        }
 
-    #date-filter button.search-btn {
-        width: 100%;
-        text-align: center;
-    }
+        #date-filter button.search-btn {
+            width: 100%;
+            text-align: center;
+        }
 }
 
 /* Responsive ayarları */
@@ -11517,13 +11516,90 @@ th {
         align-items: flex-start;
     }
 
-    .haber-item img {
-        width: 100%;
-        height: auto;
-        margin-bottom: 10px;
-    }
+        .haber-item img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
 }
 
 
+/* Arama Sonuç Sayfaı CSS*/
+.arama-sonuc {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.arama-sonuc__header {
+    margin-bottom: 20px;
+}
+
+    .arama-sonuc__header h3 {
+        font-size: 1.2em;
+        color: #0073e6;
+        margin-bottom: 5px;
+    }
+
+    .arama-sonuc__header span {
+        font-size: 0.9em;
+        color: #ff7f00;
+    }
+
+    .arama-sonuc__header a {
+        color: #0073e6;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        .arama-sonuc__header a:hover {
+            color: #ff7f00;
+        }
+
+.arama-sonuc__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.arama-sonuc__item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+    .arama-sonuc__item img {
+        width: 100px;
+        height: 100px;
+        margin-right: 15px;
+        object-fit: cover; /* Ensures the image covers the entire area without distortion */
+    }
+
+.arama-sonuc__text h4 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: #0073e6;
+}
+
+    .arama-sonuc__text h4 a {
+        color: #0073e6;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        .arama-sonuc__text h4 a:hover {
+            color: #ff7f00;
+        }
+
+.arama-sonuc__text span {
+    font-size: 0.9em;
+    color: #ff7f00;
+}
+
+.arama-sonuc__text p {
+    font-size: 0.9em;
+    color: #333;
+    line-height: 1.4;
+}
 
 
