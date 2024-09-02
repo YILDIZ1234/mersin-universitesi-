@@ -10740,6 +10740,14 @@ th {
     width: 100%;
 }
 
+.departments {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    justify-content: flex-start; /* Öğeleri sola hizalamak için */
+}
+
 .department {
     flex: 1 1 calc(33.33% - 20px); /* Üç bölüm yan yana sığacak şekilde genişlik ayarlandı */
     padding: 15px;
@@ -10747,6 +10755,11 @@ th {
     border-radius: 8px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: calc(33.33% - 20px); /* En fazla 3'lü hizaya uyacak şekilde genişliği sınırlandırdık */
+}
+
+.department:nth-child(3n) {
+    margin-right: 0; /* Üçüncü öğeden sonra sağ boşluk kaldırıldı */
 }
 
 .department h3 {
@@ -10789,9 +10802,9 @@ th {
 @media (max-width: 768px) {
     .department {
         flex: 1 1 100%; /* Mobilde bölümler alt alta sıralanır */
+        max-width: 100%;
     }
 }
-
 
 /* HABER SAYFASI CSS*/    
 
