@@ -8239,7 +8239,7 @@ p.checkout-coupon input[type=text]:focus {
     width: 100%;
     height: 100%;
     position: relative;
-    margin-bottom: 50px; /* Slider'ın altına ekstra boşluk ekleyin */
+    padding-bottom: 50px; /* Slider'ın altına ekstra boşluk ekler */
 }
 
 .swiper-slide {
@@ -8248,19 +8248,64 @@ p.checkout-coupon input[type=text]:focus {
     align-items: center;
 }
 
+.brand_item {
+    text-align: center; /* Resim ve yazıyı ortala */
+    display: flex;
+    flex-direction: column; /* Resim ve yazıyı dikey olarak hizala */
+    align-items: center; /* Merkezi hizalama */
+    padding: 10px; /* İçeriklerin etrafında boşluk */
+    box-sizing: border-box; /* Padding'in toplam genişlik ve yükseklik hesabına dahil edilmesini sağlar */
+}
+
 .brand_item img {
-    width: 100%;
-    max-width: 200px; /* İsteğe bağlı, resimlerin maksimum genişliğini belirleyebilirsiniz */
+    width: 55px; /* Resimlerin genişliğini sabitler */
+    height: 55px; /* Resimlerin yüksekliğini sabitler */
+    object-fit: cover; /* Resimlerin boyutlarıyla uyumlu olarak kesilmesini sağlar */
+    opacity: 0.7; /* Başlangıçta resimler soluk */
+    transition: opacity 0.3s ease; /* Geçiş efekti */
+}
+
+.brand_item:hover img {
+    opacity: 1; /* Üzerine gelindiğinde resimler daha canlı */
+}
+
+.brand_item p {
+    font-size: 14px; /* Yazı boyutunu ayarlayın */
+    color: #000; /* Yazı rengini belirleyin */
+    margin: 10px 0 0; /* Resim ile yazı arasına boşluk ekler */
+    transition: color 0.3s ease; /* Geçiş efekti */
+}
+
+.brand_item a {
+    text-decoration: none; /* Bağlantı alt çizgisini kaldırır */
+    color: inherit; /* Bağlantı rengini yazının rengi ile uyumlu hale getirir */
+}
+
+.brand_item a:hover p {
+    color: #FFA500; /* Üzerine gelindiğinde yazı turuncu olur */
 }
 
 /* Sayfalama noktalarını slider'ın altına yerleştirme */
 .swiper-pagination {
     position: absolute;
-    bottom: -30px; /* Sayfalama noktalarının slider'ın altında olmasını sağlar */
+    bottom: 1vh !important; /* Sayfalama noktalarını viewport yüksekliğinin %1'i kadar aşağıya yerleştirir */
     left: 0;
     width: 100%;
     text-align: center;
+    z-index: 20; /* Sayfalama noktalarının diğer öğelerin üstünde olmasını sağlar */
 }
+
+@media (max-width: 768px) {
+    .swiper-pagination {
+        padding-bottom: 20px; /* Slider'ın altına ekstra boşluk ekler */
+    }
+    .swiper-pagination-bullet {
+        width: 5px; /* Küçük ekranlar için daha büyük nokta boyutu */
+        height: 5px; /* Küçük ekranlar için daha büyük nokta boyutu */
+        margin: 0 2px; /* Noktalar arasındaki boşluk */
+    }
+}
+
 
 
 /*----------------------------------------*/
