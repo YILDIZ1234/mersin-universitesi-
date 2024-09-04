@@ -37,7 +37,7 @@
     24. Login CSS
     00. Footer CSS
 
-    Sayfa: 7158  - Anasayfa video üzerindeki yazının iç içe geçme sorunu
+ Sayfa: 7158  - Anasayfa video üzerindeki yazının iç içe geçme sorunu
     Sayfa: 10657 - Dilek ve Öneri Formu- Proje Formu CSS
     Sayfa: 10651 - Yeni Pano CSS
     Sayfa: 10704 - İdari Personel Profili CSS
@@ -47,7 +47,9 @@
     Sayfa: 10976 - AKADEMİK BİRİMLER LİSTESİ CSS
     Sayfa: 11089 - ÖĞRENCİ SAYFASI CSS
     Sayfa: 11176 - Arama Buton CSS
-    Sayfa: 11271 - Güncel-Arşiv Haber CSS
+    Sayfa: 11280 - Güncel Arşiv CSS
+    Sayfa: 11533 - Arama Sonuç Sayfası CSS
+    Sayfa: 11643 - Yönetim Kurul Üyeleri Sayfası CSS
 
 
 **********************************************/
@@ -11646,5 +11648,141 @@ th {
     color: #333;
     line-height: 1.4;
 }
+/* Yönetim Kurul Sayfası CSS */
+.yonetim-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff; /* Arka plan rengi eklendi */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Hafif bir gölge eklendi */
+}
+
+
+.yonetim-rektor {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #f8f9fa; /* Rektör bölgesi arka plan rengi */
+    padding: 20px;
+    border-radius: 12px; /* Köşe yuvarlatma */
+}
+
+.yonetim-rektor .yonetim-thumb {
+    width: 180px; /* Resim boyutu büyütüldü */
+    height: 180px; /* Resim boyutu büyütüldü */
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0; /* Resimlerin taşmamasını sağlamak için eklenmiştir */
+}
+
+.yonetim-rektor .yonetim-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+.yonetim-dekanlar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 992px) {
+    .yonetim-dekanlar {
+        grid-template-columns: repeat(2, 1fr); /* Tablet ekranları için iki sütun */
+    }
+
+    .yonetim-rektor .yonetim-thumb {
+        width: 150px; /* Resim boyutu tablet için küçültüldü */
+        height: 150px; /* Resim boyutu tablet için küçültüldü */
+    }
+}
+
+@media (max-width: 768px) {
+    .yonetim-dekanlar {
+        grid-template-columns: 1fr; /* Mobil ekranlar için tek sütun */
+    }
+
+    .yonetim-rektor .yonetim-thumb {
+        width: 120px; /* Resim boyutu mobil için küçültüldü */
+        height: 120px; /* Resim boyutu mobil için küçültüldü */
+    }
+}
+
+
+.yonetim-item {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px; /* Padding artırıldı */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Öğenin yüksekliği sabitlendi */
+}
+
+/* Fotoğraf Alanı */
+.yonetim-thumb {
+    width: 120px; /* Resim boyutu büyütüldü */
+    height: 120px; /* Resim boyutu büyütüldü */
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    flex-shrink: 0; /* Resimlerin taşmamasını sağlamak için eklenmiştir */
+}
+
+.yonetim-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* İçerik Alanı */
+.yonetim-content {
+    margin-top: 10px;
+    flex-grow: 1; /* İçerik alanının kalan alanı kaplamasını sağlar */
+}
+
+.yonetim-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.yonetim-social ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.yonetim-social ul li {
+    margin: 0 5px;
+}
+
+.yonetim-social ul li a {
+    font-size: 1.2rem;
+    color: #333;
+    border: 1px solid #ef7926; /* Zarif bir çerçeve eklendi */
+    padding: 5px;
+    border-radius: 4px;
+    transition: none; /* Geçiş kaldırıldı */
+}
+
+.yonetim-social ul li a:hover {
+    color: #ef7926;
+    background-color: transparent;
+    border-color: #ef7926;
+}
+
 
 
