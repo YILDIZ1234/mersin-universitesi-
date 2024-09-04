@@ -50,6 +50,7 @@
     Sayfa: 11280 - Güncel Arşiv CSS
     Sayfa: 11533 - Arama Sonuç Sayfası CSS
     Sayfa: 11643 - Yönetim Kurul Üyeleri Sayfası CSS
+    Sayfa: 11772 - Haber Bülten CSS
 
 
 **********************************************/
@@ -11784,5 +11785,86 @@ th {
     border-color: #ef7926;
 }
 
+* Haber Bülten */
+
+.bulten-haberler .course__item {
+    min-height: 350px; /* Minimum yükseklik ayarı */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px; /* İçerikteki boşluğu artırmak için */
+    background-color: #fff; /* Arka plan rengi */
+    border-radius: 8px; /* Köşeleri yuvarlamak için */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+}
+
+.bulten-haberler .course__thumb {
+    position: relative;
+    overflow: hidden; /* Görselin taşmasını gizler */
+    height: 200px; /* Sabit yükseklik */
+    margin-bottom: 15px; /* Başlık ile görsel arasında boşluk */
+}
+
+.bulten-haberler .course__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Görseli kapsayıcıya göre düzenler */
+}
+
+.bulten-haberler .course__title {
+    font-size: 18px;
+    margin-top: 15px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* İki satır gösterecek şekilde ayarla */
+    -webkit-box-orient: vertical;
+    overflow: hidden; /* Taşan metni gizle */
+    text-overflow: ellipsis; /* Uzun başlıkları üç nokta ile kes */
+}
+
+.bulten-haberler .course__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1; /* İçeriğin kalan alanı kaplaması için */
+}
+
+.bulten-haberler .course__meta,
+.bulten-haberler .course__btn {
+    margin-top: auto;
+}
+
+.orange-bg {
+    background-color: #FFA500;
+}
+
+.highlight {
+    background-color: #FFA500;
+    color: #fff;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+@media only screen and (max-width: 768px) {
+    .bulten-haberler .course__item {
+        margin-bottom: 20px;
+    }
+
+    .bulten-haberler .course__thumb {
+        height: 150px; /* Mobilde görsel yüksekliğini küçült */
+    }
+
+    .bulten-haberler .course__title {
+        font-size: 16px;
+        -webkit-line-clamp: 2; /* Mobilde de iki satır göster */
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .bulten-haberler .course__title {
+        font-size: 18px;
+        -webkit-line-clamp: 2; /* Masaüstünde iki satır göster */
+    }
+}
 
 
