@@ -156,38 +156,42 @@
 	});
 
 
-	////////////////////////////////////////////////////
+////////////////////////////////////////////////////
     // 10. Brand Js
-	var swiper = new Swiper('.brand__slider', {
-		slidesPerView: 6,
-		spaceBetween: 30,
-		loop: true,
-		pagination: {
-			el: '.swiper-pagination',
-			clickable: true,
-		},
-		breakpoints: {
-			'1200': {
-				slidesPerView: 6,
-			},
-			'992': {
-				slidesPerView: 5,
-			},
-			'768': {
-				slidesPerView: 3,
-			},
-			'576': {
-				slidesPerView: 2,
-			},
-			'0': {
-				slidesPerView: 1,
-			},
-		},
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-	});
+	var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 4, // Varsayılan olarak kaç slayt gösterileceğini ayarlar
+    spaceBetween: 30, // Slaytlar arasındaki boşluğu ayarlar
+    loop: true, // Döngü özelliğini aktif hale getirir
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+        delay: 3000, // Otomatik kaydırma süresi (milisaniye cinsinden)
+        disableOnInteraction: false, // Kullanıcı etkileşiminden sonra otomatik kaydırma devam eder
+    },
+    breakpoints: {
+        2560: { 
+            slidesPerView: 5, // Büyük ekranlar için 5 slayt
+        },
+        1440: { 
+            slidesPerView: 4, // Orta büyüklükteki ekranlar için 4 slayt
+        },
+        1024: { 
+            slidesPerView: 3, // Küçük ekranlar için 3 slayt
+        },
+        768: { 
+            slidesPerView: 2, // Mobil cihazlar için 2 slayt
+        },
+        576: { 
+            slidesPerView: 2, // Küçük mobil cihazlar için 2 slayt
+        }
+    }
+});
 
 
 	////////////////////////////////////////////////////
