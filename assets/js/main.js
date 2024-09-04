@@ -24,6 +24,11 @@
 21. Counter Js
 22. Parallax Js
 23. InHover Active Js
+24. idari Personel Profili Js
+25. Haber Sayfası Js
+26. Arama Buton Js
+27. Haber Bülten Js
+
 
 ****************************************************/
 
@@ -486,5 +491,32 @@ document.addEventListener('DOMContentLoaded', function () {
     window.openSearchModal = openSearchModal;
     window.closeSearchModal = closeSearchModal;
 });
+
+	////////////////////////////////////////////////////
+    // 27. Haber Bülten Js
+   document.addEventListener('DOMContentLoaded', function() {
+    // Tüm öğeleri gizle ve sadece Haberler kategorisini göster
+    let allItems = document.querySelectorAll('.grid-item');
+    allItems.forEach(item => item.style.display = 'none');
+    let cat1Items = document.querySelectorAll('.cat1');
+    cat1Items.forEach(item => item.style.display = 'block');
+    
+    // Kategori butonlarına tıklanıldığında ilgili öğeleri göster
+    document.querySelectorAll('.filter-button-group button').forEach(button => {
+        button.addEventListener('click', function() {
+            let filterValue = this.getAttribute('data-filter');
+            if (filterValue === '*') {
+                // Eğer 'Hepsi' butonuna tıklandıysa, tüm öğeleri göster
+                allItems.forEach(item => item.style.display = 'block');
+            } else {
+                // Diğer kategorilerde sadece seçilen öğeleri göster
+                allItems.forEach(item => item.style.display = 'none'); // Tüm öğeleri gizle
+                let selectedItems = document.querySelectorAll(filterValue);
+                selectedItems.forEach(item => item.style.display = 'block'); // Seçilen öğeleri göster
+            }
+        });
+    });
+});
+
 
 })(jQuery);
