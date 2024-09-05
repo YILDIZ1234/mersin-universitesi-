@@ -28,6 +28,7 @@
 25. Haber Sayfası Js
 26. Arama Buton Js
 27. Haber Bülten Js
+28. Fakülte Sayfası Js
 
 
 ****************************************************/
@@ -517,6 +518,39 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+	////////////////////////////////////////////////////
+    // 28. Fakülte Sayfası Js
+   document.addEventListener('DOMContentLoaded', function() {
+    const newsCarousel = document.querySelector('.news-carousel');
+    const announcementCarousel = document.querySelector('.announcement-carousel');
+    const leftArrows = document.querySelectorAll('.left-arrow');
+    const rightArrows = document.querySelectorAll('.right-arrow');
+
+    function scrollCarousel(carousel, direction) {
+        const itemWidth = carousel.querySelector('.news-item, .announcement-item').offsetWidth;
+        const scrollAmount = itemWidth + 20; // Scroll by one item width at a time, plus margin
+        carousel.scrollBy({
+            left: direction === 'left' ? -scrollAmount : scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+
+    leftArrows.forEach((arrow, index) => {
+        arrow.addEventListener('click', function() {
+            const carousel = index === 0 ? newsCarousel : announcementCarousel;
+            scrollCarousel(carousel, 'left');
+        });
+    });
+
+    rightArrows.forEach((arrow, index) => {
+        arrow.addEventListener('click', function() {
+            const carousel = index === 0 ? newsCarousel : announcementCarousel;
+            scrollCarousel(carousel, 'right');
+        });
+    });
+});
+
 
 
 })(jQuery);
