@@ -37,7 +37,7 @@
     24. Login CSS
     00. Footer CSS
 
- Sayfa: 7158  - Anasayfa video üzerindeki yazının iç içe geçme sorunu
+    Sayfa: 7158  - Anasayfa video üzerindeki yazının iç içe geçme sorunu
     Sayfa: 10657 - Dilek ve Öneri Formu- Proje Formu CSS
     Sayfa: 10651 - Yeni Pano CSS
     Sayfa: 10704 - İdari Personel Profili CSS
@@ -51,6 +51,7 @@
     Sayfa: 11533 - Arama Sonuç Sayfası CSS
     Sayfa: 11643 - Yönetim Kurul Üyeleri Sayfası CSS
     Sayfa: 11772 - Haber Bülten CSS
+    Sayfa: 11855 - Fakülte Sayfası CSS
 
 
 **********************************************/
@@ -11866,5 +11867,187 @@ th {
         -webkit-line-clamp: 2; /* Masaüstünde iki satır göster */
     }
 }
+
+/* Fakülte Sayfası CSS */
+.fakulte-container {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.fakulte {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden; /* Scroll yerine gizleme */
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+.news-item, .announcement-item {
+    background-color: rgba(234, 234, 234, 0.8);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    width: calc(33.333% - 20px); /* Varsayılan olarak 3 öğe sığacak şekilde */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 0 0 calc(33.333% - 20px); /* Varsayılan olarak 3 öğe sığacak şekilde */
+    border: 1px solid #ccc;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    color: inherit;
+}
+
+.news-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.news-item:hover, .announcement-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.date {
+    font-weight: bold;
+    color: #182958;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 14px;
+    color: #333333;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+    border-radius: 50%;
+    font-size: 16px;
+    user-select: none;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-arrow {
+    left: -15px;
+}
+
+.right-arrow {
+    right: -15px;
+}
+
+.carousel-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.button-wrapper {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button-wrapper button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #182958;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-wrapper button:hover {
+    background-color: #2a49a1;
+}
+
+/* Responsive Medya Sorguları */
+
+/* Tabletler için */
+@media (max-width: 1024px) {
+    .news-item, .announcement-item {
+        width: calc(50% - 20px); /* 2 öğe sığacak şekilde ayarlandı */
+        flex: 0 0 calc(50% - 20px);
+    }
+}
+
+/* Mobil cihazlar için */
+@media (max-width: 768px) {
+    .news-item, .announcement-item {
+        width: calc(100% - 20px); /* Mobilde tek seferde tek öğe görünecek şekilde ayarlandı */
+        flex: 0 0 calc(100% - 20px);
+
+       
+    }
+
+    .carousel-arrow {
+        display: block; /* Mobilde okları göster */
+    }
+
+    .left-arrow {
+        left: -15px; /* Mobilde okları biraz daha içeride göster */
+         
+
+             
+
+    }
+
+    .right-arrow {
+        right: -15px; /* Mobilde okları biraz daha içeride göster */
+         
+    }
+}
+ /* Okların Ortalanması için düzenleme */
+    .carousel-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .carousel-arrow {
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 2;
+        border-radius: 50%;
+        font-size: 18px;
+        user-select: none;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
 
 
